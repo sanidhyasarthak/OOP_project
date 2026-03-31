@@ -1,0 +1,12 @@
+name: CI-Example
+on: [push] # The trigger
+
+jobs:
+  build:
+    runs-on: ubuntu-latest # The virtual environment
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4 # Essential: copies your repo to the runner
+
+      - name: Run a script
+        run: echo "The workflow is running successfully!"

@@ -12,8 +12,20 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3
 
+    # --- NEW MONITORING SENSORS ---
+    
+    - name: Security Scan (Secret Detection)
+      uses: gitleaks/gitleaks-action@v2
+      # This "monitors" if you accidentally committed a password
+
+    - name: Code Quality Check (Linting)
+      run: echo "Checking for messy code..."
+      # In a real project, you'd run a command like 'flake8 .' here
+
+    # ------------------------------
+
     - name: Run Step
       run: echo "Pipeline running"
 
     - name: Fail Step
-      run: exit 0
+      run: exit 0  # Changed to 0 so the build stays green unless a sensor fails

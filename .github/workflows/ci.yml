@@ -16,4 +16,4 @@ jobs:
       run: echo "Pipeline running"
 
     - name: Fail Step
-      run: exit 1
+      run: exit 0

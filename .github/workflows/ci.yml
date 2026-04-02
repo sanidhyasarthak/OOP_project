@@ -1,0 +1,19 @@
+name: Monitoring Demo
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Run Step
+      run: echo "Pipeline running"
+
+    - name: Fail Step
+      run: exit 1
